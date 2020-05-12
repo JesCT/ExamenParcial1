@@ -35,9 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmbDepartamentos = new System.Windows.Forms.ComboBox();
+            this.txtLluvia = new System.Windows.Forms.TextBox();
+            this.btnIngresar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -57,9 +57,9 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.btnIngresar);
+            this.tabPage1.Controls.Add(this.txtLluvia);
+            this.tabPage1.Controls.Add(this.cmbDepartamentos);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
@@ -124,30 +124,31 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "mm";
             // 
-            // comboBox1
+            // cmbDepartamentos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(375, 200);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(240, 28);
-            this.comboBox1.TabIndex = 4;
+            this.cmbDepartamentos.FormattingEnabled = true;
+            this.cmbDepartamentos.Location = new System.Drawing.Point(375, 200);
+            this.cmbDepartamentos.Name = "cmbDepartamentos";
+            this.cmbDepartamentos.Size = new System.Drawing.Size(240, 28);
+            this.cmbDepartamentos.TabIndex = 4;
             // 
-            // textBox1
+            // txtLluvia
             // 
-            this.textBox1.Location = new System.Drawing.Point(375, 280);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 27);
-            this.textBox1.TabIndex = 5;
+            this.txtLluvia.Location = new System.Drawing.Point(375, 280);
+            this.txtLluvia.Name = "txtLluvia";
+            this.txtLluvia.Size = new System.Drawing.Size(100, 27);
+            this.txtLluvia.TabIndex = 5;
             // 
-            // button1
+            // btnIngresar
             // 
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(375, 360);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Ingresar Datos";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIngresar.AutoSize = true;
+            this.btnIngresar.Location = new System.Drawing.Point(375, 360);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(144, 30);
+            this.btnIngresar.TabIndex = 6;
+            this.btnIngresar.Text = "Ingresar Datos";
+            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // pictureBox1
             // 
@@ -167,6 +168,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -181,9 +183,9 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.TextBox txtLluvia;
+        private System.Windows.Forms.ComboBox cmbDepartamentos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
