@@ -188,6 +188,7 @@
             this.btnCargar.TabIndex = 1;
             this.btnCargar.Text = "Cargar Datos";
             this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // label5
             // 
