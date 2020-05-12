@@ -40,6 +40,8 @@ namespace examenParcial1
             cmbDepartamentos.ValueMember = "Codigo";
             cmbDepartamentos.DataSource = departamentos;
             cmbDepartamentos.Refresh();
+
+            
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

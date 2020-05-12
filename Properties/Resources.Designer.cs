@@ -63,6 +63,16 @@ namespace examenParcial1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LLuvia {
+            get {
+                object obj = ResourceManager.GetObject("LLuvia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lluvia_4 {
             get {
                 object obj = ResourceManager.GetObject("Lluvia-4", resourceCulture);
