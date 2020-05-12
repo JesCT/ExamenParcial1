@@ -39,9 +39,14 @@
             this.txtLluvia = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgvRegistro = new System.Windows.Forms.DataGridView();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -75,10 +80,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.btnCargar);
+            this.tabPage2.Controls.Add(this.dgvRegistro);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1296, 562);
+            this.tabPage2.Size = new System.Drawing.Size(1450, 750);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mostrar Datos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -160,6 +168,38 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // dgvRegistro
+            // 
+            this.dgvRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistro.Location = new System.Drawing.Point(6, 45);
+            this.dgvRegistro.Name = "dgvRegistro";
+            this.dgvRegistro.RowHeadersWidth = 51;
+            this.dgvRegistro.RowTemplate.Height = 24;
+            this.dgvRegistro.Size = new System.Drawing.Size(1438, 658);
+            this.dgvRegistro.TabIndex = 0;
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.AutoSize = true;
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Location = new System.Drawing.Point(1282, 709);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(150, 35);
+            this.btnCargar.TabIndex = 1;
+            this.btnCargar.Text = "Cargar Datos";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Blue;
+            this.label5.Location = new System.Drawing.Point(377, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(426, 24);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Registro Lluvias Departamentales";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,7 +212,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,6 +233,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvRegistro;
+        private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Label label5;
     }
 }
 
