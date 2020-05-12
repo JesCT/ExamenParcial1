@@ -46,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -201,6 +202,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.pictureBox2);
             this.tabPage3.Controls.Add(this.dgvProm);
@@ -225,10 +227,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(601, 106);
+            this.label6.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(479, 53);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 28);
+            this.label6.Size = new System.Drawing.Size(0, 20);
             this.label6.TabIndex = 2;
             // 
             // pictureBox1
@@ -250,6 +252,18 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1100, 714);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 30);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Calcular Promedio";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -295,6 +309,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView dgvProm;
+        private System.Windows.Forms.Button button1;
     }
 }
 

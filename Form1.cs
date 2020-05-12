@@ -13,6 +13,7 @@ namespace examenParcial1
 {
     public partial class Form1 : Form
     {
+        int n = 0;
         List<Departamentos> departamentos = new List<Departamentos>();
         List<Registros> registros = new List<Registros>();
         public Form1()
@@ -41,7 +42,11 @@ namespace examenParcial1
             cmbDepartamentos.DataSource = departamentos;
             cmbDepartamentos.Refresh();
 
-            
+            //Mostrar Lista departamentos
+            dgvProm.DataSource = null;
+            dgvProm.DataSource = departamentos;
+            dgvProm.Refresh();
+
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -112,28 +117,31 @@ namespace examenParcial1
             dgvRegistro.DataSource = registros;
             dgvRegistro.Refresh();
 
-            //Nueva columna Departamento
-            dgvRegistro.Columns.Add("Departamento", "Departamento");
-            
-
-            for (int i = 0; i < 5; i++)
+            if (n == 0)
             {
-                dgvRegistro.Columns.Add("Fecha" + i, "Fecha " + (i + 1));
-                dgvRegistro.Columns.Add("Registro" + i, "Registro " + (i + 1));
+                //Nueva columna Departamento
+                dgvRegistro.Columns.Add("Departamento", "Departamento");
+
+                for (int i = 0; i < 5; i++)
+                {
+                    dgvRegistro.Columns.Add("Fecha" + i, "Fecha " + (i + 1));
+                    dgvRegistro.Columns.Add("Registro" + i, "Registro " + (i + 1));
+                }
+                n = 1;
             }
 
 
-            //recorrer con un ciclo a todos los alumnos para ingresarlos a las columnas creadas
+            //recorrer con un ciclo a todos los registros para ingresarlos a las columnas creadas
             for (int i = 0; i < registros.Count; i++)
             {
                 for (int x = 0; x < 22; x++)
                 {
                     if (registros[i].Codigo == departamentos[x].Codigo)
                     {
-                        dgvRegistro["Departamento", i].Value = departamentos[i].Departamento;
+                        dgvRegistro["Departamento", i].Value = departamentos[x].Departamento;
                     }
                 }
-                //recorrer con un ciclos las notas de cada alumno
+                //recorrer con un ciclos las fechas y registros
                 for (int j = 0; j < registros[i].Medicion.Count; j++)
                 {
                     dgvRegistro["Fecha" + j, i].Value = registros[i].FechaMedicion[j];
@@ -142,6 +150,12 @@ namespace examenParcial1
 
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double promedio = ((registros.Count*100.0)/22.0);
+            label6.Text = "El promedio de lluvias en Guatemala es: " + promedio + "%";
         }
     }
 }
