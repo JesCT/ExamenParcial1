@@ -69,6 +69,14 @@ namespace examenParcial1
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             int  cont = 0;
+            //for (int i = 0; i < 22; i++)
+            //{
+            //    Registros registrosTemp = new Registros();
+            //    registrosTemp.Codigo = "0" + (i+1);
+            //    registrosTemp.Medicion.Add("0");
+            //    registrosTemp.FechaMedicion.Add("0");
+            //}
+
             for (int i = 0; i < 22; i++)
             {
                 if(cmbDepartamentos.SelectedValue.ToString() == registros[i].Codigo)
@@ -124,35 +132,46 @@ namespace examenParcial1
                     dgvRegistro.Columns.Add("Registro" + i, "Registro " + (i + 1));
                 }
 
-                //recorrer con un ciclo a todos los registros para ingresarlos a las columnas creadas
-                for (int i = 0; i < registros.Count; i++)
-                {
-                    for (int x = 0; x < 22; x++)
-                    {
-                        if (registros[i].Codigo == departamentos[x].Codigo)
-                        {
-                            dgvRegistro["Departamento", i].Value = departamentos[x].Departamento;
-                        }
-                    }
-                    //recorrer con un ciclos las fechas y registros
-                    for (int j = 0; j < registros[i].Medicion.Count; j++)
-                    {
-                        dgvRegistro["Fecha" + j, i].Value = registros[i].FechaMedicion[j];
-                        dgvRegistro["Registro" + j, i].Value = registros[i].Medicion[j];
-                    }
-
-
-                }
-
                 n = 1;
             }
-            
+
+            //recorrer con un ciclo a todos los registros para ingresarlos a las columnas creadas
+            for (int i = 0; i < registros.Count; i++)
+            {
+                for (int x = 0; x < 22; x++)
+                {
+                    if (registros[i].Codigo == departamentos[x].Codigo)
+                    {
+                        dgvRegistro["Departamento", i].Value = departamentos[x].Departamento;
+                    }
+                }
+                //recorrer con un ciclos las fechas y registros
+                for (int j = 0; j < registros[i].Medicion.Count; j++)
+                {
+                    dgvRegistro["Fecha" + j, i].Value = registros[i].FechaMedicion[j];
+                    dgvRegistro["Registro" + j, i].Value = registros[i].Medicion[j];
+                }
+
+
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double promedio = ((registros.Count*100.0)/22.0);
+            int prom = 0;
+            int c = 0;
+            for (int i = 0; i < 22; i++)
+            {
+                if (registros[i].FechaMedicion[0] == "0")
+                {
+                    c++;
+                }
+            }
+            prom = 22 - c;
+            double promedio = ((prom*100)/22);
             label6.Text = "El promedio de lluvias en Guatemala es: " + promedio + "%";
+            label7.Text = "Ha llovido en " + prom + " Departamentos";
         }
     }
 }
