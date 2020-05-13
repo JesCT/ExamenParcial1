@@ -35,7 +35,24 @@ namespace examenParcial1
                 departamentos.Add(departamentosTemp);
             }
             reader.Close();
-            
+
+            //Carga el Archivo Registro
+            stream = new FileStream("Registros.txt", FileMode.Open, FileAccess.Read);
+            reader = new StreamReader(stream);
+
+            while (reader.Peek() > -1)
+            {
+                Registros registrosTemp = new Registros();
+                registrosTemp.Codigo = reader.ReadLine();
+                for(int i=0; i < 5; i++)
+                {
+                    registrosTemp.Medicion.Add(reader.ReadLine());
+                    registrosTemp.FechaMedicion.Add(reader.ReadLine());
+                }
+                registros.Add(registrosTemp);
+            }
+            reader.Close();
+
             //Mostrar Departamentos en ComboBox
             cmbDepartamentos.DisplayMember = "Departamento";
             cmbDepartamentos.ValueMember = "Codigo";
