@@ -68,41 +68,20 @@ namespace examenParcial1
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (registros.Count == 0)
+            int  cont = 0;
+            for (int i = 0; i < 22; i++)
             {
-                //Crea el primer objeto de la lista
-                Registros registrosTemp = new Registros();
-                registrosTemp.Codigo = cmbDepartamentos.SelectedValue.ToString();
-                registrosTemp.Medicion.Add(txtLluvia.Text);
-                registrosTemp.FechaMedicion.Add(Convert.ToString(DateTime.Now));
-                registros.Add(registrosTemp);
-                Guardar();
-            }
-            else
-            {
-                //Bandera
-                char bandera = 'F';
-
-                for (int i = 0; i < registros.Count; i++)
+                if(cmbDepartamentos.SelectedValue.ToString() == registros[i].Codigo)
                 {
-                    //Entra en si se repite el departamento
-                    if (cmbDepartamentos.SelectedValue.ToString() == registros[i].Codigo)
+                    for (int j = 0; j < 5; j++)
                     {
-                        registros[i].Medicion.Add(txtLluvia.Text);
-                        registros[i].FechaMedicion.Add(Convert.ToString(DateTime.Now));
-                        bandera = 'v';
-                        Guardar();
+                        if (registros[i].FechaMedicion[j]=="0")
+                        {
+                            cont++;
+                        }
                     }
-                }
-
-                //Entra si es un nuevo departamento
-                if (bandera == 'F')
-                {
-                    Registros registrosTemp = new Registros();
-                    registrosTemp.Codigo = cmbDepartamentos.SelectedValue.ToString();
-                    registrosTemp.Medicion.Add(txtLluvia.Text);
-                    registrosTemp.FechaMedicion.Add(Convert.ToString(DateTime.Now));
-                    registros.Add(registrosTemp);
+                    registros[i].Medicion[5 - cont] = txtLluvia.Text;
+                    registros[i].FechaMedicion[5 - cont] = Convert.ToString(DateTime.Now);
                     Guardar();
                 }
             }
