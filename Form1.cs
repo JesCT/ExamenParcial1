@@ -144,29 +144,30 @@ namespace examenParcial1
                     dgvRegistro.Columns.Add("Fecha" + i, "Fecha " + (i + 1));
                     dgvRegistro.Columns.Add("Registro" + i, "Registro " + (i + 1));
                 }
+
+                //recorrer con un ciclo a todos los registros para ingresarlos a las columnas creadas
+                for (int i = 0; i < registros.Count; i++)
+                {
+                    for (int x = 0; x < 22; x++)
+                    {
+                        if (registros[i].Codigo == departamentos[x].Codigo)
+                        {
+                            dgvRegistro["Departamento", i].Value = departamentos[x].Departamento;
+                        }
+                    }
+                    //recorrer con un ciclos las fechas y registros
+                    for (int j = 0; j < registros[i].Medicion.Count; j++)
+                    {
+                        dgvRegistro["Fecha" + j, i].Value = registros[i].FechaMedicion[j];
+                        dgvRegistro["Registro" + j, i].Value = registros[i].Medicion[j];
+                    }
+
+
+                }
+
                 n = 1;
             }
-
-
-            //recorrer con un ciclo a todos los registros para ingresarlos a las columnas creadas
-            for (int i = 0; i < registros.Count; i++)
-            {
-                for (int x = 0; x < 22; x++)
-                {
-                    if (registros[i].Codigo == departamentos[x].Codigo)
-                    {
-                        dgvRegistro["Departamento", i].Value = departamentos[x].Departamento;
-                    }
-                }
-                //recorrer con un ciclos las fechas y registros
-                for (int j = 0; j < registros[i].Medicion.Count; j++)
-                {
-                    dgvRegistro["Fecha" + j, i].Value = registros[i].FechaMedicion[j];
-                    dgvRegistro["Registro" + j, i].Value = registros[i].Medicion[j];
-                }
-
-
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
